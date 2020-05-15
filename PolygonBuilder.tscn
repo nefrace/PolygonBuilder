@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/PolygonBuilder/PolygonBuilder.gd" type="Script" id=1]
+
+[node name="PolygonBuilder" type="Button"]
+margin_right = 62.0
+margin_bottom = 22.0
+text = "Build polygons"
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="PopupMenu" parent="."]
+margin_top = 22.0
+margin_right = 232.0
+margin_bottom = 74.0
+items = [ "Generate Polygon2D", null, 0, false, false, 0, 0, null, "", false, "Generate CollisionPolygon2D", null, 0, false, false, 1, 0, null, "", false, "Generate LightOccluder2D", null, 0, false, false, 2, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="id_pressed" from="Popup" to="." method="_on_Popup_id_pressed"]
